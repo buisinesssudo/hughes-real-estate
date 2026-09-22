@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hughes Real Estate Services | Los Angeles Real Estate Agent</title>
+<meta name="description" content="Hughes Real Estate Services, led by Larry Hughes, provides personalized real estate guidance for buyers and sellers throughout Los Angeles, California.">
+<meta name="keywords" content="Hughes Real Estate Services, Los Angeles real estate, Larry Hughes real estate agent, buy a home Los Angeles, sell a home Los Angeles">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0E1B2E; --navy-2:#16283F; --white:#FFFFFF; --gold:#C6A15B;
+    --gold-soft:#E4D2A8; --beige:#F6F2E9; --ink:#1B2432; --gray:#5B6472;
+    --line:#E2DDD0;
+    padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+    box-sizing:border-box;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth; scroll-padding-top:96px}
+  body{margin:0; font-family:'Inter',-apple-system,sans-serif; color:var(--ink); background:var(--white); line-height:1.6; -webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif; font-weight:500; line-height:1.15; margin:0}
+  a{color:inherit; text-decoration:none}
+  img{max-width:100%; display:block}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 32px}
+  section{padding:96px 0}
+  .eyebrow{color:var(--gold); font-family:'Fraunces',serif; font-style:italic; font-size:1.05rem; margin-bottom:10px}
+  .btn{display:inline-flex; align-items:center; gap:8px; padding:15px 30px; border-radius:2px; font-weight:600; font-size:.95rem; letter-spacing:.2px; cursor:pointer; border:1px solid transparent; transition:background .2s ease, color .2s ease, border-color .2s ease}
+  .btn-gold{background:var(--gold); color:var(--navy)}
+  .btn-gold:hover{background:var(--gold-soft)}
+  .btn-line{border-color:rgba(255,255,255,.45); color:var(--white)}
+  .btn-line:hover{border-color:var(--white); background:rgba(255,255,255,.08)}
+  .btn-navy{background:var(--navy); color:var(--white)}
+  .btn-navy:hover{background:var(--navy-2)}
+  .btn-outline-navy{border-color:var(--navy); color:var(--navy)}
+  .btn-outline-navy:hover{background:var(--navy); color:var(--white)}
+
+  /* NAV */
+  header{position:sticky; top:env(safe-area-inset-top,0px); z-index:50; background:rgba(14,27,46,.96); backdrop-filter:blur(6px)}
+  nav.wrap{display:flex; align-items:center; justify-content:space-between; padding:20px 32px}
+  .brand{display:flex; flex-direction:column; color:var(--white)}
+  .brand .name{font-family:'Fraunces',serif; font-size:1.28rem; letter-spacing:.3px}
+  .brand .tag{font-size:.66rem; color:var(--gold-soft); letter-spacing:1.5px; margin-top:2px}
+  .navlinks{display:flex; align-items:center; gap:34px}
+  .navlinks a{color:rgba(255,255,255,.82); font-size:.93rem}
+  .navlinks a:hover{color:var(--gold-soft)}
+  .navtoggle{display:none; background:none; border:0; color:var(--white); font-size:1.6rem; cursor:pointer}
+
+  /* HERO */
+  .hero{position:relative; background:linear-gradient(180deg,var(--navy) 0%,var(--navy-2) 100%); color:var(--white); overflow:hidden; padding:140px 0 0}
+  .hero .wrap{position:relative; z-index:2; display:grid; grid-template-columns:1.05fr .95fr; gap:40px; align-items:center; padding-bottom:80px}
+  .hero h1{font-size:clamp(2.4rem,4.4vw,3.65rem); max-width:11.5ch}
+  .hero p.sub{margin:26px 0 36px; font-size:1.14rem; color:rgba(255,255,255,.78); max-width:46ch}
+  .hero .actions{display:flex; gap:16px; flex-wrap:wrap}
+  .skyline{width:100%; height:auto}
+  .hero-foot{position:relative; z-index:2; border-top:1px solid rgba(255,255,255,.12); padding:22px 0}
+  .hero-foot .wrap{display:flex; gap:44px; flex-wrap:wrap; font-size:.85rem; color:rgba(255,255,255,.6)}
+  .hero-foot strong{color:var(--gold-soft); font-family:'Fraunces',serif; font-style:italic; font-weight:400}
+
+  /* ABOUT */
+  .about .wrap{display:grid; grid-template-columns:.9fr 1.1fr; gap:64px; align-items:start}
+  .about h2{font-size:2.2rem; max-width:9ch}
+  .about .lede{color:var(--gray); font-size:1.08rem; max-width:52ch}
+  .about .card{background:var(--beige); border:1px solid var(--line); padding:30px 32px; margin-top:26px}
+  .about .card p{margin:0; color:var(--ink); font-size:.98rem}
+  .about .card .who{font-family:'Fraunces',serif; font-size:1.15rem; margin-bottom:6px}
+
+  /* SERVICES */
+  .services{background:var(--beige)}
+  .services .head{max-width:60ch; margin-bottom:52px}
+  .services h2{font-size:2.2rem}
+  .grid5{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line)}
+  .svc{background:var(--white); padding:38px 32px; min-height:200px}
+  .svc .num{font-family:'Fraunces',serif; font-style:italic; color:var(--gold); font-size:.95rem}
+  .svc h3{font-size:1.18rem; margin:14px 0 10px}
+  .svc p{color:var(--gray); font-size:.93rem; margin:0}
+
+  /* WHY */
+  .why .wrap{display:grid; grid-template-columns:.85fr 1.15fr; gap:64px; align-items:center}
+  .why h2{font-size:2.2rem; max-width:9ch}
+  .why-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column}
+  .why-list li{display:flex; gap:20px; padding:22px 0; border-top:1px solid var(--line)}
+  .why-list li:last-child{border-bottom:1px solid var(--line)}
+  .why-list .mark{color:var(--gold); font-family:'Fraunces',serif; font-style:italic; font-size:1.3rem; line-height:1.4}
+  .why-list h3{font-size:1.05rem; margin-bottom:4px}
+  .why-list p{margin:0; color:var(--gray); font-size:.93rem}
+
+  /* LA SECTION */
+  .la{background:var(--navy); color:var(--white); position:relative; overflow:hidden}
+  .la .wrap{position:relative; z-index:2; display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center}
+  .la h2{font-size:2.1rem; max-width:11ch; color:var(--white)}
+  .la p{color:rgba(255,255,255,.75); max-width:46ch; margin:22px 0 30px}
+  .la .addr{border-left:2px solid var(--gold); padding-left:18px; margin-bottom:30px; font-size:.98rem; color:rgba(255,255,255,.9)}
+  .mappanel{border:1px solid rgba(255,255,255,.18); padding:34px; background:rgba(255,255,255,.03)}
+  .mappanel .pin{color:var(--gold)}
+  .mappanel h3{font-family:'Fraunces',serif; font-size:1.2rem; font-weight:400; margin:14px 0 6px}
+  .mappanel p{color:rgba(255,255,255,.65); font-size:.9rem; margin:0 0 22px}
+
+  /* CONTACT */
+  .contact .wrap{display:grid; grid-template-columns:.9fr 1.1fr; gap:64px}
+  .contact h2{font-size:2.2rem; max-width:8ch}
+  .ccard{margin-top:28px}
+  .ccard .person{font-family:'Fraunces',serif; font-size:1.5rem; margin-bottom:2px}
+  .ccard .biz{color:var(--gray); margin-bottom:24px}
+  .cline{display:flex; gap:14px; align-items:flex-start; padding:16px 0; border-top:1px solid var(--line)}
+  .cline:last-of-type{border-bottom:1px solid var(--line)}
+  .cline .lbl{font-size:.75rem; letter-spacing:.5px; color:var(--gold); text-transform:uppercase; width:70px; flex-shrink:0; padding-top:2px}
+  .cline a{font-weight:600}
+  .cactions{display:flex; gap:14px; margin-top:26px; flex-wrap:wrap}
+
+  form.leadform{background:var(--beige); border:1px solid var(--line); padding:40px}
+  form.leadform h3{font-family:'Fraunces',serif; font-weight:400; font-size:1.3rem; margin-bottom:6px}
+  form.leadform .note{color:var(--gray); font-size:.9rem; margin-bottom:26px}
+  .frow{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:18px}
+  .field{display:flex; flex-direction:column; gap:6px; margin-bottom:18px}
+  .field label{font-size:.78rem; letter-spacing:.3px; color:var(--gray)}
+  .field input, .field select, .field textarea{font-family:'Inter',sans-serif; font-size:.95rem; padding:12px 14px; border:1px solid var(--line); background:var(--white); color:var(--ink)}
+  .field input:focus, .field select:focus, .field textarea:focus{outline:2px solid var(--gold); outline-offset:1px; border-color:var(--gold)}
+  .field textarea{resize:vertical; min-height:100px}
+  .formmsg{margin-top:16px; font-size:.9rem; color:var(--navy); display:none}
+  .formmsg.show{display:block}
+
+  /* FOOTER */
+  footer{background:var(--navy); color:rgba(255,255,255,.65); padding:56px 0 30px}
+  .fgrid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px; padding-bottom:36px; border-bottom:1px solid rgba(255,255,255,.12)}
+  .fgrid .name{font-family:'Fraunces',serif; color:var(--white); font-size:1.15rem}
+  .fgrid h4{color:var(--white); font-size:.85rem; letter-spacing:.4px; margin-bottom:14px; font-weight:600}
+  .fgrid ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px; font-size:.9rem}
+  .fgrid a:hover{color:var(--gold-soft)}
+  .fbottom{padding-top:22px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:.8rem}
+
+  @media (prefers-reduced-motion:no-preference){
+    .reveal{animation:rise .7s ease both}
+    @keyframes rise{from{opacity:0; transform:translateY(14px)} to{opacity:1; transform:translateY(0)}}
+  }
+
+  @media(max-width:920px){
+    .navlinks{display:none}
+    .navtoggle{display:block}
+    .hero .wrap, .about .wrap, .why .wrap, .la .wrap, .contact .wrap{grid-template-columns:1fr}
+    .grid5{grid-template-columns:1fr 1fr}
+    .fgrid{grid-template-columns:1fr}
+    .frow{grid-template-columns:1fr}
+  }
+  @media(max-width:600px){
+    .wrap{padding:0 20px}
+    section{padding:64px 0}
+    .grid5{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="brand">
+      <span class="name">Hughes Real Estate</span>
+      <span class="tag">SERVICES · LOS ANGELES</span>
+    </div>
+    <div class="navlinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#why">Why Choose Us</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="btn btn-gold" style="padding:11px 22px">Get in Touch</a>
+    </div>
+    <button class="navtoggle" aria-label="Menu" onclick="document.getElementById('mnav').classList.toggle('show')">☰</button>
+  </nav>
+  <div id="mnav" style="display:none; flex-direction:column; background:var(--navy-2); padding:8px 32px 22px;">
+    <a style="padding:10px 0; color:#fff" href="#home">Home</a>
+    <a style="padding:10px 0; color:#fff" href="#about">About</a>
+    <a style="padding:10px 0; color:#fff" href="#services">Services</a>
+    <a style="padding:10px 0; color:#fff" href="#why">Why Choose Us</a>
+    <a style="padding:10px 0; color:#fff" href="#contact">Contact</a>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="eyebrow">Hughes Real Estate Services</p>
+      <h1>Your Trusted Real Estate Partner in Los Angeles</h1>
+      <p class="sub">Helping clients navigate Los Angeles real estate with confidence, professionalism, and personalized service.</p>
+      <div class="actions">
+        <a href="#contact" class="btn btn-gold">Get in Touch</a>
+        <a href="https://maps.app.goo.gl/1Fpczt7qYCK2TBws8" target="_blank" rel="noopener" class="btn btn-line">View Location</a>
+      </div>
+    </div>
+    <svg class="skyline" viewBox="0 0 480 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C6A15B" stop-opacity=".9"/><stop offset="1" stop-color="#C6A15B" stop-opacity=".15"/></linearGradient></defs>
+      <circle cx="360" cy="90" r="70" fill="url(#g1)" opacity=".5"/>
+      <g stroke="#E4D2A8" stroke-width="1.3" fill="none" opacity=".85">
+        <rect x="40" y="210" width="46" height="170"/>
+        <rect x="96" y="160" width="40" height="220"/>
+        <rect x="146" y="240" width="34" height="140"/>
+        <rect x="190" y="120" width="52" height="260"/>
+        <rect x="252" y="190" width="38" height="190"/>
+        <rect x="300" y="150" width="46" height="230"/>
+        <rect x="356" y="230" width="34" height="150"/>
+        <rect x="400" y="200" width="42" height="180"/>
+        <line x1="20" y1="380" x2="460" y2="380"/>
+      </g>
+      <g fill="#E4D2A8" opacity=".7">
+        <rect x="52" y="225" width="6" height="8"/><rect x="66" y="225" width="6" height="8"/>
+        <rect x="52" y="250" width="6" height="8"/><rect x="66" y="250" width="6" height="8"/>
+        <rect x="110" y="180" width="6" height="8"/><rect x="122" y="180" width="6" height="8"/>
+        <rect x="200" y="140" width="6" height="8"/><rect x="216" y="140" width="6" height="8"/>
+        <rect x="200" y="170" width="6" height="8"/><rect x="216" y="170" width="6" height="8"/>
+        <rect x="312" y="170" width="6" height="8"/><rect x="326" y="170" width="6" height="8"/>
+      </g>
+      <g stroke="#E4D2A8" stroke-width="1.5" opacity=".6">
+        <path d="M410 380 Q408 300 415 260" fill="none"/>
+        <path d="M415 260 l-14 -10 M415 260 l16 -8 M415 260 l4 -16" />
+      </g>
+    </svg>
+  </div>
+  <div class="hero-foot">
+    <div class="wrap">
+      <div><strong>Owner</strong><br>Larry Hughes</div>
+      <div><strong>Serving</strong><br>Los Angeles, CA</div>
+      <div><strong>Call</strong><br><a href="tel:+13232282736">(323) 228-2736</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <h2>About Hughes Real Estate Services</h2>
+    <div>
+      <p class="lede">Hughes Real Estate Services is a local Los Angeles real estate business led by Larry Hughes. The focus is simple: give every client clear, personalized guidance so they can make real estate decisions with confidence, whether they're buying their first home, selling a property, or exploring the local market.</p>
+      <div class="card">
+        <p class="who">Larry Hughes</p>
+        <p>Larry works directly with clients throughout the buying and selling process, offering straightforward advice and attentive, one-on-one service tailored to each client's goals in the Los Angeles area.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">What We Offer</p>
+      <h2>Real Estate Services</h2>
+    </div>
+    <div class="grid5">
+      <div class="svc"><span class="num">01</span><h3>Buying a Home</h3><p>Guidance through every step of finding and purchasing a home in Los Angeles, from search to closing.</p></div>
+      <div class="svc"><span class="num">02</span><h3>Selling a Property</h3><p>Support preparing, positioning, and navigating the sale of your property in the local market.</p></div>
+      <div class="svc"><span class="num">03</span><h3>Property Consultation</h3><p>One-on-one conversations to help you think through your real estate options and next steps.</p></div>
+      <div class="svc"><span class="num">04</span><h3>Real Estate Guidance</h3><p>Clear answers and practical advice at any stage of the real estate process, big or small.</p></div>
+      <div class="svc"><span class="num">05</span><h3>Local Market Assistance</h3><p>Perspective on Los Angeles neighborhoods and market conditions to inform your decisions.</p></div>
+      <div class="svc" style="background:var(--navy); color:#fff; display:flex; flex-direction:column; justify-content:center">
+        <p style="color:rgba(255,255,255,.75); font-size:.93rem; margin:0 0 14px">Have a question about your situation?</p>
+        <a href="#contact" class="btn btn-gold" style="align-self:flex-start; padding:11px 20px">Get in Touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap">
+    <h2>Why Choose Us</h2>
+    <ul class="why-list">
+      <li><span class="mark">＋</span><div><h3>Personalized Service</h3><p>Every client's situation is different — the approach is tailored to yours.</p></div></li>
+      <li><span class="mark">＋</span><div><h3>Local Los Angeles Focus</h3><p>Work with someone who focuses specifically on the Los Angeles area.</p></div></li>
+      <li><span class="mark">＋</span><div><h3>Professional Guidance</h3><p>Straightforward, professional advice at every stage of the process.</p></div></li>
+      <li><span class="mark">＋</span><div><h3>Client-Focused Approach</h3><p>Your goals and questions come first, from the first conversation onward.</p></div></li>
+      <li><span class="mark">＋</span><div><h3>Clear Communication</h3><p>Responsive, easy-to-understand communication throughout.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="la" id="location">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow" style="color:var(--gold-soft)">Los Angeles, California</p>
+      <h2>Serving Los Angeles and the Local Community</h2>
+      <p>Hughes Real Estate Services is based in Los Angeles and works with clients across the local community on their real estate needs.</p>
+      <div class="addr">4404 S Van Ness Ave<br>Los Angeles, CA 90062, United States</div>
+      <a href="https://maps.app.goo.gl/1Fpczt7qYCK2TBws8" target="_blank" rel="noopener" class="btn btn-gold">Get Directions</a>
+    </div>
+    <div class="mappanel">
+      <span class="pin">◎</span>
+      <h3>4404 S Van Ness Ave</h3>
+      <p>Los Angeles, CA 90062, United States</p>
+      <a href="https://maps.app.goo.gl/1Fpczt7qYCK2TBws8" target="_blank" rel="noopener" class="btn btn-line">Open in Google Maps</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Get in Touch</p>
+      <h2>Contact</h2>
+      <div class="ccard">
+        <p class="person">Larry Hughes</p>
+        <p class="biz">Hughes Real Estate Services</p>
+
+        <div class="cline"><span class="lbl">Phone</span><a href="tel:+13232282736">(323) 228-2736</a></div>
+        <div class="cline"><span class="lbl">Address</span><span>4404 S Van Ness Ave, Los Angeles, CA 90062, United States</span></div>
+
+        <div class="cactions">
+          <a href="tel:+13232282736" class="btn btn-navy">Call Now</a>
+          <a href="https://maps.app.goo.gl/1Fpczt7qYCK2TBws8" target="_blank" rel="noopener" class="btn btn-outline-navy">Get Directions</a>
+        </div>
+      </div>
+    </div>
+
+    <form class="leadform" onsubmit="event.preventDefault(); document.getElementById('fmsg').classList.add('show'); this.reset();">
+      <h3>Request a Consultation</h3>
+      <p class="note">Tell us a bit about what you need — Larry will follow up directly.</p>
+      <div class="frow">
+        <div class="field"><label for="fname">Name</label><input id="fname" type="text" required></div>
+        <div class="field"><label for="femail">Email</label><input id="femail" type="email" required></div>
+      </div>
+      <div class="field"><label for="fphone">Phone</label><input id="fphone" type="tel"></div>
+      <div class="field"><label for="fhelp">How can we help?</label>
+        <select id="fhelp">
+          <option>Buying a Home</option>
+          <option>Selling a Property</option>
+          <option>Property Consultation</option>
+          <option>Real Estate Guidance</option>
+          <option>Local Market Assistance</option>
+        </select>
+      </div>
+      <div class="field"><label for="fmessage">Message</label><textarea id="fmessage"></textarea></div>
+      <button type="submit" class="btn btn-gold" style="width:100%; justify-content:center">Request a Consultation</button>
+      <p class="formmsg" id="fmsg">Thank you — your request has been noted. Larry will be in touch soon.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <p class="name">Hughes Real Estate Services</p>
+        <p style="margin-top:10px; max-width:36ch">Larry Hughes · Los Angeles, California</p>
+      </div>
+      <div>
+        <h4>QUICK LINKS</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#why">Why Choose Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>CONTACT</h4>
+        <ul>
+          <li><a href="tel:+13232282736">(323) 228-2736</a></li>
+          <li>4404 S Van Ness Ave<br>Los Angeles, CA 90062</li>
+          <li><a href="https://maps.app.goo.gl/1Fpczt7qYCK2TBws8" target="_blank" rel="noopener">Google Maps</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbottom">
+      <span>© <span id="yr"></span> Hughes Real Estate Services. All rights reserved.</span>
+      <span>Larry Hughes, Los Angeles, CA</span>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
